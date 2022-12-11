@@ -1,0 +1,53 @@
+{
+    "name": "selectdb-portal",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "docusaurus": "docusaurus",
+        "start": "docusaurus start",
+        "start:zh-CN": "docusaurus start --locale zh-CN",
+        "build": "PWA_SERVICE_WORKER_URL=https://doris.apache.org/sw.js docusaurus build",
+        "build:version": "docusaurus set-versions && docusaurus build",
+        "swizzle": "docusaurus swizzle",
+        "deploy": "docusaurus deploy",
+        "clear": "docusaurus clear",
+        "serve": "docusaurus serve",
+        "build:zip": "rm -rf portal.zip && zip -r portal.zip build/**",
+        "generatePDF": "npx vitpress-generate-pdf -buildDirPath='./build/'  --firstDocPath='/docs/summary/basic-summary/' --paginationSelector='.pagination-nav__link--next' --contentSelector='article' --coverImage='https://cdn.selectdb.com/images/doris-logo-512.png' --coverTitle='Apache Doris 1.1 (English)' --outputPDFFilename='Apache Doris 1.1 (English).pdf'",
+        "write-translations": "docusaurus write-translations --locale zh-CN",
+        "write-heading-ids": "docusaurus write-heading-ids",
+        "typecheck": "tsc"
+    },
+    "dependencies": {
+        "@docusaurus/core": "2.0.0-beta.21",
+        "@docusaurus/plugin-pwa": "2.0.0-beta.21",
+        "@docusaurus/preset-classic": "2.0.0-beta.21",
+        "@easyops-cn/docusaurus-search-local": "^0.30.2",
+        "@mdx-js/react": "^1.6.22",
+        "clsx": "^1.1.1",
+        "docusaurus-plugin-sass": "^0.2.2",
+        "prism-react-renderer": "^1.3.3",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "react-github-button": "^0.1.11",
+        "sass": "^1.53.0",
+        "vitpress-generate-pdf": "^1.1.0"
+    },
+    "devDependencies": {
+        "@docusaurus/module-type-aliases": "^2.0.0-beta.21",
+        "@tsconfig/docusaurus": "^1.0.6",
+        "typescript": "^4.7.4"
+    },
+    "browserslist": {
+        "production": [
+            ">0.5%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    }
+}
